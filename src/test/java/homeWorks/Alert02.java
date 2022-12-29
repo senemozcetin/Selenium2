@@ -37,10 +37,7 @@ tıklayın ve result mesajında isminizin görüntülendiğini doğrulayın.
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
     }
-    @AfterClass
-    public static void tearDown(){
-        driver.quit();
-    }
+
     @Test
     public void acceptAlert(){
         //Bir metod olusturun: acceptAlert
