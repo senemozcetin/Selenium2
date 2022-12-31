@@ -3,6 +3,7 @@ package Slaytlar;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -26,21 +27,16 @@ public class S1 {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get(" https://www.amazon.com/");
-        String actuelTitle=  driver.getTitle();
-        String expectedTitle= "Amozon";
-        Assert.assertTrue(actuelTitle.contains(expectedTitle));
-        String actuelUrl= driver.getCurrentUrl();
-        String expectedUrl="https://www.amazon.com/";
-        Assert.assertTrue(actuelUrl.contains(expectedUrl));
-        String handleDeger= driver.getWindowHandle();
-        System.out.println("Handle degeri : "+ handleDeger);
-        String sayfaKodlari= driver.getPageSource();
-        if (sayfaKodlari.contains("Gateway")){
-            System.out.println("Source Code Testi PASSED");
-        }else System.out.println("Source Code Testi FAILED");
-
+        String actualTitle= driver.getTitle();
+        System.out.println(actualTitle);
+        Assert.assertTrue(actualTitle.contains("Amazon"));
+        String actualUrl= driver.getCurrentUrl();
+        System.out.println("actualUrl = " + actualUrl);
+        Assert.assertTrue(actualUrl.contains("amazon"));
+        System.out.println(driver.getWindowHandle());
+        String gateawayText= driver.getPageSource();
+        Assert.assertTrue(gateawayText.contains("Gateway"));
         driver.close();
-
 
 
     }
