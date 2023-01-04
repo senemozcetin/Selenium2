@@ -22,7 +22,7 @@ public class HomeWorkIframe extends TestBase {
         //sayfadaki toplam iframe sayısını bulunuz.
         List<WebElement> iframeList = driver.findElements(By.tagName("iframe"));
         int iframeSize= iframeList.size();
-        System.out.println("Toplam iframe sayisi : "+ iframeSize);
+        System.out.println("Toplam iframe sayisi = "+ iframeSize);
 
         //Sayfa basliginda ‘Editor’ yazını içerdiğini test edelim.
         String actualTitle= driver.findElement(By.xpath("//h3")).getText();
@@ -39,7 +39,8 @@ public class HomeWorkIframe extends TestBase {
         paragrafYazisi.sendKeys("iframein icindeyim");
         Thread.sleep(3000);
 
-        //Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim
+        //Alt kısımdaki yazının ‘Elemental Selenium’ yazisini içerdiğini test edelim...
+
         driver.switchTo().parentFrame();
         String parentYazi= driver.findElement(By.xpath("//*[.='Elemental Selenium']")).getText();
         Assert.assertTrue(parentYazi.contains("Elemental Selenium"));
