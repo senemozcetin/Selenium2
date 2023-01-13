@@ -153,12 +153,30 @@ DropDown : Dropdown menüler, listeden seçim yapmayı sağlamak amacıyla kulla
 * * EXCEPTION * *
 Interview Questions
 -Tell me 5 exception that you get.-5 adet selenium da aldigin exceptions dan bahset.
--What type of exceptions do you get in selenium? - Seleniumda ki align exceptions tiplerinden bahset
+ ==> Null pointer, no such element, time out, stal element reference , web driver
+
+-What type of exceptions do you get in selenium? - Seleniumda ki aldigin exceptions tiplerinden bahset
+==> Hata mesajini oku
+==>Genel olarak zamanlama, yanlis locator, iframe hatalari olabiliyor
+
 -What is your solution?-Cozum ne?
+==>Hata mesajina gore exceptioni cozdukten sonra tekrar kodumu calistiririm
+
 -What type of waits do you use?- Hangi çesit wait kullanirsin?
+==>implicit ya da explicit ya da fluent
+
 -Which wait do you prefer?- Hangi wait tercih edersin?
+==>TestBase(Driver sinifinda) implicit wait kullaniyorum. Cogu problemi cozuyor.
+ cozemedigi durumlarda explicit wait kullaniyorum
+
 -Why do you prefer that wait?- Neden onu tercih edersin?
+==> Explicit wait elemente ozel yazilabilir. Yerel cozum gerektiginde explicit waiti kullanmak zorundayiz.
+
 -How to you resolve synronization issue?-Senkronizasyon problemini nasil cozersin?
+==>  Selenium waitlerini kullanarak. Implicit wait driver im da var, ama yetmedigi durumlarda explicit wait kullanirim.
+Bu yüzden ReusableMethod sinifimda tekrar tekrar kullanabileceğimiz explicit wait method lari var.
+Kolaylıkla explicit wait ile bekleme problemlerini cozebuliyoruz.
+
 >> NoSuchElementException
 -NoSuchElementException
 -Yanlis locator
