@@ -12,6 +12,13 @@ import java.util.Date;
 public class C02_Screenshot2 extends TestBase {
     @Test
     public void screenshotOfSpecificElements() throws IOException {
+        /*
+          Ekran goruntusu alma:
+getScreenShotAs metotu ile alinir. Bu metot Selenium dan gelir
+getScreenshotAs metotu TakesScreenshot api indan gelir
+Selenium 4 den itibaren 2 farklı sekilde ekran goruntusu alınabilir: Tum Sayfa, Özel element
+Olusturmus oldugumuz ReusableMetot yardimizya ister tum sayfanin, istersem belirli bir elementin ekran goruntusunu kolaylıkla alabilirim
+         */
 //        Techpro education a git
         driver.get("https://www.techproeducation.com");
 //        Sosyal medya elemanlarını goruntusunu al
