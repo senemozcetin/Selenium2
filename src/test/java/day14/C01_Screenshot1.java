@@ -34,17 +34,25 @@ public class C01_Screenshot1 extends TestBase {
 
 //        3. Goruntum ile dosyami birlestirip kaydet
         FileUtils.copyFile(goruntu,hedef);
+
+
 //        ALTERNATIF OLARAK TUM BU ADIMLARI TEK SEFERDE DEGISKEN KULLANMADAN YAPABILIRIM
 //        FileUtils.copyFile(((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE),//goruntu
 //                new File(System.getProperty("user.dir")+"/test-output/EkranGoruntuleri/image.png"));//path
+
+
+
 //        -“QA” aramasi yap
         driver.findElement(By.xpath("//input[@type='search']")).sendKeys("QA"+Keys.ENTER);
         waitFor(4);
+
+
 //        Acilen sayfanin metnini test et ve ekran goruntusu al: “Search Results for: qa”
         String expected = "Search Results for: QA";
         String text = driver.findElement(By.xpath("//*[contains(text(),'Search Results for')]")).getText();
         Assert.assertTrue(expected.contains(text));
 //        ARA DAN REUSABLE METHOD OLUSTURUP GORUNTUYU ALALIM
+        takeScreenShotOfPage();
 
 
     }

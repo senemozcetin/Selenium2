@@ -21,6 +21,8 @@ Olusturmus oldugumuz ReusableMetot yardimizya ister tum sayfanin, istersem belir
          */
 //        Techpro education a git
         driver.get("https://www.techproeducation.com");
+
+
 //        Sosyal medya elemanlarını goruntusunu al
 //        1. ekran goruntusunu ek
         WebElement sosyalMedyaIconlari=driver.findElement(By.xpath("(//div[@class='elementor-widget-container'])[1]"));
@@ -30,6 +32,7 @@ Olusturmus oldugumuz ReusableMetot yardimizya ister tum sayfanin, istersem belir
 //        Path of screenshot save folder               folder / folder    /file name
         String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentTime+"image.png";
         FileUtils.copyFile(image,new File(path));
+
 
         //LOGONUN EKRAN GORUNTUSUNU AL
         takeScreenshotOfElement(driver.findElement(By.xpath("//div[@data-id='898ce2e']")));

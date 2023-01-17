@@ -16,7 +16,8 @@ public class C03_ExtentReports extends TestBase {
     /*
     Extent Reports :
 Otomasyon raporları almak icin kullanılır.
-Extent report ayrı bir API dir. Extent reports seleniumin disindada kullanilabirlar.  Bu API dan gelen metotlar yardımıyla rapor sablonu oluşturabilir.
+Extent report ayrı bir API dir. Extent reports seleniumin disindada kullanilabirlar.
+ Bu API dan gelen metotlar yardımıyla rapor sablonu oluşturabilir.
 3 class kullandık
 ExtentReports -> sablonu olusturu
 ExtentHTMLReporter -> sablonu projeye ekler
@@ -45,6 +46,7 @@ ExtentTest -> raporlama islemini yapar. Loglari rapora yazdırir.
 //        *********************************EXTRA RAPOR ISMI VE DOCUMAN ISMI EKLEYEBILIRIZ****
         extentHtmlReporter.config().setDocumentTitle("TechProEd Extent Reports");
         extentHtmlReporter.config().setReportName("Regression Test Sonucu");
+
 //        ********************************RAPOR AYARLARI BITTI****************************
 //        Raporu projeme ekliyorum
         extentReports.attachReporter(extentHtmlReporter);
@@ -57,6 +59,7 @@ ExtentTest -> raporlama islemini yapar. Loglari rapora yazdırir.
         driver.findElement(By.linkText("LMS LOGIN")).click();
         //TEST BITTI
         extentTest.pass("TEST BASARIYLA GERCEKLESTI");
+
 
 
         //RAPORU GOSTER.  RAPORUN OLUSMASI ICIN BU ADIM ZORUNLUDUR
