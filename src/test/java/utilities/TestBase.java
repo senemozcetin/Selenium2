@@ -191,4 +191,36 @@ public abstract class TestBase {
         String path = System.getProperty("user.dir")+"/test-output/Screenshots/"+currentTime+"image.png";
         FileUtils.copyFile(image,new File(path));
     }
+//SCROLLINTOVIEW
+public void scrollIntoViewJS(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
+
+// bu metot ile sayfanin en altina inebiliriz
+    public void scrolllEndJs(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+    }
+
+//bu metot ile sayfanin en ustune inebiliriz
+    public void scrolllTopJs(){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("window.scrollTo(0,-document.body.scrollHeight)");
+    }
+
+// Bu metot ile belirli bir elemente JS Executer ile tiklanabilir
+    public  void clickByJS(WebElement element){
+    JavascriptExecutor js = (JavascriptExecutor)driver;
+    js.executeScript("arguments[0].click();", element);
+    }
+
+// gitmis oldugum metni elemente yazdirir.
+// bu metot sendKeys e alternatiftir.
+// sendKeys oncelikli tercihimizdir
+    public  void typewithJS(WebElement element, String metin){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].setAttribute('Value', '"+metin+"')",element);
+    }
+
 }
