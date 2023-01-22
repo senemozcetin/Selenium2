@@ -223,4 +223,20 @@ public void scrollIntoViewJS(WebElement element){
         js.executeScript("arguments[0].setAttribute('Value', '"+metin+"')",element);
     }
 
+    //input elementindeki degerleri al// Belirli bir elementin value attribute unun degerini almak icin
+    //return
+    //document HTML E git
+    //.getElementById('"+idOfElement+"') id si verilen elementi bul
+    //.value") value attribute indeki degeri bul
+    //.toString() stringe cevir
+    public void getValueByJS(String idOfElement){
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        String metin= js.executeScript("return document.getElementById('"+idOfElement+"').value").toString();
+        System.out.println("Kutudaki deger :"+metin);
+        //Not:   document.querySelector("p").value;  --> p tagli ilk elementin degerini return eder
+        //        document.querySelector(".example").value;  --> css degeri alir
+    }
+
+
+
 }
