@@ -28,6 +28,7 @@ public abstract class TestBase {
     @Before
     public void setup()  {
         WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.http.factory", "jdk-http-client");
         driver = new ChromeDriver();
 //        driver=WebDriverManager.chromedriver().create();
         driver.manage().window().maximize();
